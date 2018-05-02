@@ -1,0 +1,221 @@
+{
+	"places": [
+		{
+			"coords": [
+				1,
+				1
+			],
+			"placeName": "",
+			"desc": "",
+			"question": {
+				"question": "Waar zijn meer vertakkingen in een gletsjerrivier?",
+				"answer": [
+					{
+						"option": "Bovenloop",
+						"rightAnswer": true
+					},
+					{
+						"option": "Middenloop",
+						"rightAnswer": false
+					}
+				]
+			}
+		},
+		{
+			"coords": [
+				1,
+				1
+			],
+			"placeName": "",
+			"desc": "",
+			"question": {
+				"question": "Welk van de onderstaande woorden passen niet bij het begrip 'stroomstelsel'?",
+				"answer": [
+					{
+						"option": "doodtij",
+						"rightAnswer": true
+					},
+					{
+						"option": "Bovenloop",
+						"rightAnswer": false
+					},
+					{
+						"option": "Lengte-profiel",
+						"rightAnswer": false
+					}
+				]
+			}
+		},
+		{
+			"coords": [
+				1,
+				1
+			],
+			"placeName": "",
+			"desc": "",
+			"question": {
+				"question": "In de bovenloop is het A groter, en in de benedenloop is B altijd groter",
+				"answer": [
+					{
+						"option": "A = verhang, B = waterafvoer",
+						"rightAnswer": true
+					},
+					{
+						"option": "A = regiem, B = verval",
+						"rightAnswer": false
+					},
+					{
+						"option": "A = verhang, B = stroomgebied",
+						"rightAnswer": false
+					}
+				]
+			}
+		},
+		{
+			"coords": [
+				1,
+				1
+			],
+			"placeName": "",
+			"desc": "",
+			"question": {
+				"question": "Welk woord past niet in he volgende rijtje? dijkverzwaring, ontbossing, doodtij, verstening",
+				"answer": [
+					{
+						"option": "doodtij",
+						"rightAnswer": true
+					},
+					{
+						"option": "dijkverzwaring",
+						"rightAnswer": false
+					},
+					{
+						"option": "ontbossing",
+						"rightAnswer": false
+					},
+					{
+						"option": "verstening",
+						"rightAnswer": false
+					}
+				]
+			}
+		},
+		{
+			"coords": [
+				1,
+				1
+			],
+			"placeName": "",
+			"desc": "",
+			"question": {
+				"question": "Een rivier mond uit in zee in de vrom van een trechter, dit noem je een ...",
+				"answer": [
+					{
+						"option": "estuarium",
+						"rightAnswer": true
+					},
+					{
+						"option": "slurf",
+						"rightAnswer": false
+					},
+					{
+						"option": "monding",
+						"rightAnswer": false
+					}
+				]
+			}
+		},
+		{
+			"coords": [
+				1,
+				1
+			],
+			"placeName": "",
+			"desc": "",
+			"question": {
+				"question": "Welke dijksoort mag overstromen?",
+				"answer": [
+					{
+						"option": "De zomerdijk",
+						"rightAnswer": true
+					},
+					{
+						"option": "De winterdijk",
+						"rightAnswer": false
+					}
+				]
+			}
+		},
+		{
+			"coords": [
+				1,
+				1
+			],
+			"placeName": "",
+			"desc": "",
+			"question": {
+				"question": "Bij rivier A is het verval 200m en het verhang 20cm/Km, bij rivier B is het verval 300m en het verhang 30 cm/Km. Wat kun je zeggen over de stroomsnelheid van de rivieren",
+				"answer": [
+					{
+						"option": "Rivier B heeft een snelere stroomsnelheid.",
+						"rightAnswer": true
+					},
+					{
+						"option": "Rivier A heeft een snelere stroomsnelheid.",
+						"rightAnswer": false
+					},
+					{
+						"option": "Bijden rivieren hebben ongeveer dezelfde stroomsnelheid.",
+						"rightAnswer": true
+					}
+				]
+			}
+		},
+		{
+			"coords": [
+				1,
+				1
+			],
+			"placeName": "",
+			"desc": "",
+			"question": {
+				"question": "Wanneer heeft de Maas de grootste afvoer?",
+				"answer": [
+					{
+						"option": "januari-maart",
+						"rightAnswer": true
+					},
+					{
+						"option": "april-mei",
+						"rightAnswer": false
+					},
+					{
+						"option": "juni-augustus",
+						"rightAnswer": false
+					}
+				]
+			}
+		},
+		{
+			"coords": [
+				1,
+				1
+			],
+			"placeName": "",
+			"desc": "",
+			"question": {
+				"question": "In een estuarium komt een zoetwatermilieu voor.",
+				"answer": [
+					{
+						"option": "Waar",
+						"rightAnswer": true
+					},
+					{
+						"option": "Niet waar",
+						"rightAnswer": false
+					}
+				]
+			}
+		}
+	]
+}

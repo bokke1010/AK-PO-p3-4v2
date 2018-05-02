@@ -1,54 +1,26 @@
-{
-	"places": [
-		{
-			"coords": [1,1],
-			"placeName": "hue",
-			"desc": "primary",
-			"question":
-			{
-				"question":"tester",
-				"answer": [
-					{
-						"option":"correct",
-						"rightAnswer":true
-					},
-					{
-						"option":"incorrect",
-						"rightAnswer":false
-					},
-					{
-						"option":"what?",
-						"rightAnswer":false
-					},
-					{
-						"option":"4",
-						"rightAnswer":false
-					},
-					{
-						"option":"5",
-						"rightAnswer":false
-					}
-				]
-			}
-		},
-		{
-			"coords": [2,1],
-			"placeName": "NO",
-			"desc": "secondary",
-			"question":
-			{
-				"question":"how is this place called?",
-				"answer": [
-					{
-						"option":"NO",
-						"rightAnswer":true
-					},
-					{
-						"option":"YES",
-						"rightAnswer":false
-					}
-				]
-			}
-		}
-	]
-}
+// {
+// 	"coords": [
+// 		1,
+// 		1
+// 	],
+// 	"placeName": "",
+// 	"desc": "",
+// 	"question": {
+// 		"question": "",
+// 		"answer": [
+// 			{
+// 				"option": "",
+// 				"rightAnswer": true
+// 			},
+// 			{
+// 				"option": "",
+// 				"rightAnswer": false
+// 			}
+// 		]
+// 	}
+// },
+// ,
+// {
+// 	"option": "",
+// 	"rightAnswer": false
+// }
