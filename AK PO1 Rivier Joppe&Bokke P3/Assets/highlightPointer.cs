@@ -5,17 +5,17 @@ using UnityEngine.UI;
 
 public class highlightPointer : MonoBehaviour {
 	public locationManager pointLoc;
-	private Vector2 screenCenter;
+	// private Vector2 screenCenter;
 	private Camera mainCamera;
 	public bool selected;
+	public int index;
 	public float baseScale;
 	private Transform selectormodel;
 	public DataLoader gamecontroller;
+	private Text[] output;
 
 	// button related
-	private Text[] output;
 	public GameObject buttonPrefab;
-	private GameObject[] buttons;
 	public Material correctMat;
 	public Material incorrectMat;
 	public bool active;
@@ -23,41 +23,21 @@ public class highlightPointer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		active = true;
+		// Get all basic information
 		mainCamera = Camera.main;
-		transform.localPosition = new Vector3 (pointLoc.coords [0], 0f, pointLoc.coords [1]);
-		screenCenter = new Vector2 (Screen.width, Screen.height)/2;
-		Debug.Log (screenCenter);
-		selectormodel = transform.GetChild (0).transform;
-		baseScale = selectormodel.localScale.x;
+		active = true;
 		gamecontroller = FindObjectOfType<DataLoader> ();
 		cardsource = FindObjectOfType<cardSpawner> ();
-
-		// text content
-		buttons = new GameObject[pointLoc.question.answer.Length];
+		// screenCenter = new Vector2 (Screen.width, Screen.height)/2;
+		// Set all necicarry variables
+		transform.localPosition = new Vector3 (pointLoc.coords [0], 0f, pointLoc.coords [1]);
+		selectormodel = transform.GetChild (0).transform;
+		baseScale = selectormodel.localScale.x;
 		output = gameObject.GetComponentsInChildren<Text> ();
-		output [0].text = pointLoc.placeName + "..." + pointLoc.desc;
-		output [1].text = pointLoc.question.question;
-		GameObject canvas = GetComponentInChildren<Canvas> ().gameObject;
-		posAnswer[] allquestions = pointLoc.question.answer;
-		for(int i = 0; i < allquestions.Length; i++){
-			// nice circle of buttons around the object
-			Vector3 buttonPos = gameObject.transform.position;
-			float angle = (float)i * (360 / (float)allquestions.Length);
-			angle -= 90;
-			if (angle < 0) {
-				angle += 360;
-			}
-			buttonPos.x += 0.7f * Mathf.Sin (angle * Mathf.Deg2Rad);
-			buttonPos.z += 0.7f * Mathf.Cos (angle * Mathf.Deg2Rad);
-			buttonPos.y = 1;
-			// actually instantiate the button
-			buttons[i] = Instantiate (buttonPrefab, buttonPos, canvas.transform.rotation, canvas.transform); // x range is from -60 to 60
-			buttons[i].GetComponentInChildren<Text>().text = allquestions[i].option;
-			int tempInt = i;
-			buttons [i].GetComponent<Button> ().onClick.AddListener(() => buttonPressed(tempInt));
-		}
-
+		output [0].text = pointLoc.placeName;
+		Debug.Log (pointLoc.placeName);
+		// Create related card
+		cardsource.fillCard (index, pointLoc.desc, pointLoc.question.question, pointLoc.question.answer, buttonPrefab, gameObject.GetComponent<highlightPointer> ());
 	}
 	
 	// Update is called once per frame
@@ -65,28 +45,19 @@ public class highlightPointer : MonoBehaviour {
 		Vector3 mousePos = Input.mousePosition;
 		Vector3 mousePosR = mainCamera.ScreenToWorldPoint (new Vector3 (mousePos.x, mousePos.y, 8.5f)); //mainCamera.nearClipPlane
 		Vector2 coords = new Vector2(pointLoc.coords[0], pointLoc.coords[1]);
-		if (Vector2.Distance (new Vector2(mousePosR.x, mousePosR.z), coords) < 0.6f) {
-			selected = true;
-		} else {
-			selected = false;
+		if (Vector2.Distance (new Vector2(mousePosR.x, mousePosR.z), coords) < 0.6f && Input.GetMouseButtonDown(0)) {
+			selected = !selected;
 		}
-
 		configureScale (selected);
 	}
 
-	void hideVisibility(bool txtVisible, bool btnVisible){
-		foreach (Text txt in output) {
-			txt.enabled = txtVisible;
-		}
-		foreach (GameObject btn in buttons) {
-			btn.GetComponentInChildren<Text> ().enabled = btnVisible;
-			btn.GetComponent<Image> ().enabled = btnVisible;
-		}
+	void hideVisibility(bool txtVisible){
+		cardsource.showCard (index, txtVisible);
+		output [0].enabled = txtVisible;
 	}
 
-	void buttonPressed(int _answer){
+	public void buttonPressed(int _answer){
 		if (active) {
-			cardsource.showCard ();
 			if (pointLoc.question.answer [_answer].rightAnswer) {
 				gamecontroller.score += 1;
 				gameObject.GetComponentInChildren<MeshRenderer> ().material = correctMat;
@@ -101,10 +72,39 @@ public class highlightPointer : MonoBehaviour {
 	void configureScale(bool _selected){
 		if (selected) {
 			selectormodel.localScale = Vector3.one * 2 * baseScale;
-			hideVisibility (true, active);
+			hideVisibility (true);
 		} else {
 			selectormodel.localScale = Vector3.one * baseScale;
-			hideVisibility (false, false);
+			hideVisibility (false);
 		}
 	}
+	/*
+		// text content
+		//TODO: Move this all to the card
+		output = gameObject.GetComponentsInChildren<Text> ();
+		//TODO: cleanup text placement
+		output [0].text = pointLoc.placeName + "..." + pointLoc.desc;
+		output [1].text = pointLoc.question.question;
+		GameObject canvas = GetComponentInChildren<Canvas> ().gameObject;
+		posAnswer[] allquestions = pointLoc.question.answer;
+		// NOTE: dynamically generate buttons
+		buttons = new GameObject[pointLoc.question.answer.Length];
+		for (int i = 0; i < allquestions.Length; i++) {
+			// nice circle of buttons around the object
+			Vector3 buttonPos = gameObject.transform.position;
+			float angle = (float)i * (360 / (float)allquestions.Length);
+			angle -= 90;
+			if (angle < 0) {
+				angle += 360;
+			}
+			buttonPos.x += 0.7f * Mathf.Sin (angle * Mathf.Deg2Rad);
+			buttonPos.z += 0.7f * Mathf.Cos (angle * Mathf.Deg2Rad);
+			buttonPos.y = 1;
+			// actually instantiate the button
+			buttons [i] = Instantiate (buttonPrefab, buttonPos, canvas.transform.rotation, canvas.transform); // x range is from -60 to 60
+			buttons [i].GetComponentInChildren<Text> ().text = allquestions [i].option;
+			int tempInt = i;
+			buttons [i].GetComponent<Button> ().onClick.AddListener (() => buttonPressed (tempInt));
+		}
+	*/
 }

@@ -1,22 +1,15 @@
 fileFormatVersion: 2
-guid: 0c8346e5835c7634c9e5aa51f44f0d81
-timeCreated: 1523001426
+guid: 99188f6f873b94f45a2360fa65836f39
+timeCreated: 1525350039
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Plane
-    100004: Torus
     400000: //RootNode
-    400002: Plane
-    400004: Torus
-    2300000: Plane
-    2300002: Torus
-    3300000: Plane
-    3300002: Torus
-    4300000: Torus
-    4300002: Plane
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Plane
     7400000: Default Take
     9500000: //RootNode
   materials:

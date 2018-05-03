@@ -12,9 +12,11 @@ public class mapController : MonoBehaviour {
 	void Start () {
 		jsonLocationSource = FindObjectOfType<DataLoader> ();
 		data = jsonLocationSource.locationData;
-		foreach(locationManager singlePoint in data.places){
+		for(int i = 0; i<data.places.Length; i++){
 			GameObject mapPoint = Instantiate(mapPointer);
-			mapPoint.GetComponent<highlightPointer>().pointLoc = singlePoint;
+			highlightPointer mapPHL = mapPoint.GetComponent<highlightPointer> ();
+			mapPHL.pointLoc = data.places[i];
+			mapPHL.index = i;
 		}
 	}
 }
