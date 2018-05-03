@@ -47,6 +47,12 @@ public class highlightPointer : MonoBehaviour {
 		Vector2 coords = new Vector2(pointLoc.coords[0], pointLoc.coords[1]);
 		if (Vector2.Distance (new Vector2(mousePosR.x, mousePosR.z), coords) < 0.6f && Input.GetMouseButtonDown(0)) {
 			selected = !selected;
+			if (selected) {
+				gamecontroller.activePointer = gameObject;
+			}
+		}
+		if (gamecontroller.activePointer != gameObject) {
+			selected = false;
 		}
 		configureScale (selected);
 	}
@@ -59,12 +65,14 @@ public class highlightPointer : MonoBehaviour {
 	public void buttonPressed(int _answer){
 		if (active) {
 			if (pointLoc.question.answer [_answer].rightAnswer) {
-				gamecontroller.score += 1;
+				gamecontroller.score[gamecontroller.playerIndex] += 1;
 				gameObject.GetComponentInChildren<MeshRenderer> ().material = correctMat;
 			} else {
 				Debug.Log ("incorrect :-(");
+				gamecontroller.maxScore--;
 				gameObject.GetComponentInChildren<MeshRenderer> ().material = incorrectMat;
 			}
+			gamecontroller.changePlayer ();
 			active = false;
 		}
 	}

@@ -8,25 +8,40 @@ public class DataLoader : MonoBehaviour {
 
 	private string gameDataFileName = "test.json";
 	public JsonDataInput locationData;
-	public int score;
+	public int playerIndex = 0;
+	public int playerCount = 2;
+	public int[] score;
 	public int maxScore;
+	public bool won = false;
+	private int requiredScore;
+	public GameObject activePointer;
 
 	// Use this for initialization
 	void Start () {
 		DontDestroyOnLoad (gameObject);
 		SceneManager.LoadScene ("MainScene");
 		locationData = loadGameData ();
-		score = 0;
+		score = new int[playerCount]; 
 		maxScore = locationData.places.Length;
+		requiredScore = (int)Mathf.Floor (maxScore / playerCount);
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (score == maxScore) {
-			Debug.Log ("You won!");
-			SceneManager.LoadScene ("youwon");
-			score = 0;
+		for(int i = 0; i < playerCount; i++){
+			if (score[i] >= requiredScore && !won) {
+				won = true;
+				SceneManager.LoadScene ("youwon");
+				Debug.Log ("Player " + (i + 1).ToString() + " won!");
+			}
+		}
+	}
+
+	public void changePlayer(){
+		playerIndex++;
+		if (playerIndex >= playerCount) {
+			playerIndex = 0;
 		}
 	}
 
