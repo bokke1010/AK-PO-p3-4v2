@@ -7,7 +7,7 @@ public class cardSpawner : MonoBehaviour {
 
 	public int cards;
 	public DataLoader gamecontroller;
-	private Vector3 showcardLoc = new Vector3(0,4,4);
+	private Vector3 showcardLoc = new Vector3(-1,5,6);
 	private Quaternion showcardRot = Quaternion.Euler(0,90,-90);
 	private List<Vector3> hidecardLoc = new List<Vector3>();
 	private List<Quaternion> hidecardRot = new List<Quaternion> ();
@@ -67,8 +67,7 @@ public class cardSpawner : MonoBehaviour {
 			GameObject buttonPrefab, highlightPointer parent){
 		GameObject objCanvas = cardReference[index].transform.GetChild (1).gameObject;
 		Text[] output = objCanvas.GetComponentsInChildren<Text> ();
-		output[0].text = desc;
-		output[1].text = question;
+		output[0].text = question;
 		// NOTE: dynamically generate buttons
 		GameObject[] buttons = new GameObject[answers.Length];
 		for(int i = 0; i < answers.Length; i++){

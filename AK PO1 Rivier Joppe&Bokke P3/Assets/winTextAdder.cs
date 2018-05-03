@@ -9,6 +9,6 @@ public class winTextAdder : MonoBehaviour {
 	void Start () {
 		DataLoader source = FindObjectOfType<DataLoader> ();
 		Text output = FindObjectOfType<Text> ();
-		output.text = "Player " + source.playerIndex + " has won!";
+		output.text = "Player " + (source.playerIndex + 1) + " has won!";
 	}
 }

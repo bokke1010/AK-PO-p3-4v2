@@ -6,14 +6,14 @@ using System.IO;
 
 public class DataLoader : MonoBehaviour {
 
-	private string gameDataFileName = "test.json";
+	private string gameDataFileName = "questions.json";
 	public JsonDataInput locationData;
 	public int playerIndex = 0;
 	public int playerCount = 2;
 	public int[] score;
 	public int maxScore;
 	public bool won = false;
-	private int requiredScore;
+	public int requiredScore;
 	public GameObject activePointer;
 
 	// Use this for initialization
@@ -23,12 +23,13 @@ public class DataLoader : MonoBehaviour {
 		locationData = loadGameData ();
 		score = new int[playerCount]; 
 		maxScore = locationData.places.Length;
-		requiredScore = (int)Mathf.Floor (maxScore / playerCount);
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		requiredScore = (int)Mathf.Floor (maxScore / playerCount);
 		for(int i = 0; i < playerCount; i++){
 			if (score[i] >= requiredScore && !won) {
 				won = true;

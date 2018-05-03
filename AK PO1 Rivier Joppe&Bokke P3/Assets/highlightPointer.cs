@@ -13,6 +13,7 @@ public class highlightPointer : MonoBehaviour {
 	private Transform selectormodel;
 	public DataLoader gamecontroller;
 	private Text[] output;
+	private Vector2 coords;
 
 	// button related
 	public GameObject buttonPrefab;
@@ -30,12 +31,13 @@ public class highlightPointer : MonoBehaviour {
 		cardsource = FindObjectOfType<cardSpawner> ();
 		// screenCenter = new Vector2 (Screen.width, Screen.height)/2;
 		// Set all necicarry variables
-		transform.localPosition = new Vector3 (pointLoc.coords [0], 0f, pointLoc.coords [1]);
+
+		coords = new Vector2( -pointLoc.coords[1], -4f - pointLoc.coords[0]);
+		transform.localPosition = new Vector3 ( coords.x, 0f, coords.y); // ugly, and I don't know how, but it works
 		selectormodel = transform.GetChild (0).transform;
 		baseScale = selectormodel.localScale.x;
 		output = gameObject.GetComponentsInChildren<Text> ();
 		output [0].text = pointLoc.placeName;
-		Debug.Log (pointLoc.placeName);
 		// Create related card
 		cardsource.fillCard (index, pointLoc.desc, pointLoc.question.question, pointLoc.question.answer, buttonPrefab, gameObject.GetComponent<highlightPointer> ());
 	}
@@ -44,8 +46,7 @@ public class highlightPointer : MonoBehaviour {
 	void Update () {
 		Vector3 mousePos = Input.mousePosition;
 		Vector3 mousePosR = mainCamera.ScreenToWorldPoint (new Vector3 (mousePos.x, mousePos.y, 8.5f)); //mainCamera.nearClipPlane
-		Vector2 coords = new Vector2(pointLoc.coords[0], pointLoc.coords[1]);
-		if (Vector2.Distance (new Vector2(mousePosR.x, mousePosR.z), coords) < 0.6f && Input.GetMouseButtonDown(0)) {
+		if (Vector2.Distance (new Vector2(mousePosR.x, mousePosR.z), coords) < 0.4f && Input.GetMouseButtonDown(0)) {
 			selected = !selected;
 			if (selected) {
 				gamecontroller.activePointer = gameObject;
@@ -72,6 +73,7 @@ public class highlightPointer : MonoBehaviour {
 				gamecontroller.maxScore--;
 				gameObject.GetComponentInChildren<MeshRenderer> ().material = incorrectMat;
 			}
+			Debug.Log ("score so far for player " + (gamecontroller.playerIndex + 1) + " is " + gamecontroller.score [gamecontroller.playerIndex] + " , but it needs: " + gamecontroller.requiredScore);
 			gamecontroller.changePlayer ();
 			active = false;
 		}
