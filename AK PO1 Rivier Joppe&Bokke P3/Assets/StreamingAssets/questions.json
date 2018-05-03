@@ -219,3 +219,31 @@
 		}
 	]
 }
+
+
+
+		{
+	"coords": [
+		1,
+		1
+	],
+	"placeName": "",
+	"desc": "",
+	"question": {
+		"question": "",
+		"answer": [
+			{
+				"option": "",
+				"rightAnswer": true
+			},
+			{
+				"option": "",
+				"rightAnswer": false
+			}
+		]
+	}
+},
+{
+	"option": "",
+	"rightAnswer": false
+}
