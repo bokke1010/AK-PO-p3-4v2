@@ -2,8 +2,8 @@
 	"places": [
 		{
 			"coords": [
-				1,
-				1
+				-1.691842900302115,
+				3.47583081570997
 			],
 			"placeName": "",
 			"desc": "",
@@ -23,8 +23,8 @@
 		},
 		{
 			"coords": [
-				1,
-				1
+				-1.5287009063444108,
+				3.022658610271903
 			],
 			"placeName": "",
 			"desc": "",
@@ -48,8 +48,8 @@
 		},
 		{
 			"coords": [
-				1,
-				1
+				-1.4924471299093653,
+				2.614803625377644
 			],
 			"placeName": "",
 			"desc": "",
@@ -73,8 +73,8 @@
 		},
 		{
 			"coords": [
-				1,
-				1
+				-1.6827794561933533,
+				2.1072507552870086
 			],
 			"placeName": "",
 			"desc": "",
@@ -102,8 +102,8 @@
 		},
 		{
 			"coords": [
-				1,
-				1
+				-1.882175226586103,
+				1.5543806646525677
 			],
 			"placeName": "",
 			"desc": "",
@@ -127,8 +127,8 @@
 		},
 		{
 			"coords": [
-				1,
-				1
+				-2.145015105740182,
+				1.0377643504531715
 			],
 			"placeName": "",
 			"desc": "",
@@ -148,8 +148,8 @@
 		},
 		{
 			"coords": [
-				1,
-				1
+				-2.5619335347432024,
+				0.5302114803625377
 			],
 			"placeName": "",
 			"desc": "",
@@ -173,8 +173,8 @@
 		},
 		{
 			"coords": [
-				1,
-				1
+				-2.4894259818731115,
+				-0.10422960725075558
 			],
 			"placeName": "",
 			"desc": "",
@@ -198,8 +198,8 @@
 		},
 		{
 			"coords": [
-				1,
-				1
+				-2.308157099697885,
+				-0.6117824773413898
 			],
 			"placeName": "",
 			"desc": "",
@@ -216,34 +216,173 @@
 					}
 				]
 			}
+		},
+		{
+			"coords": [
+				-1.782477341389729,
+				-0.7749244712990935
+			],
+			"placeName": "",
+			"desc": "",
+			"question": {
+				"question": "Welke methode (langs de gehele kust zand neerleggen, of op een plaats een grote hoeveelheid neer leggen) zou de overheid kiezen bij kustverdediging op lange termijn?",
+				"answer": [
+					{
+						"option": "Op een plaats een grote hoeveelheid neer leggen",
+						"rightAnswer": true
+					},
+					{
+						"option": "Langs de gehele kust zand neerleggen",
+						"rightAnswer": false
+					}
+				]
+			}
+		},
+		{
+			"coords": [
+				-1.4924471299093653,
+				-1.2552870090634443
+			],
+			"placeName": "",
+			"desc": "",
+			"question": {
+				"question": "Welke stap in de driestaps-strategie zou Nederland willen die België uitvoert, en welke stap zou België willen uitvoeren?",
+				"answer": [
+					{
+						"option": "BE:3 NL:1 of 2",
+						"rightAnswer": true
+					},
+					{
+						"option": "BE:2 NL:1 of 3",
+						"rightAnswer": false
+					},
+					{
+						"option": "BE:1 NL:2 of 3",
+						"rightAnswer": false
+					},
+					{
+						"option": "BE:3 NL:2 of 1",
+						"rightAnswer": false
+					}
+				]
+			}
+		},
+		{
+			"coords": [
+				-1.3383685800604228,
+				-1.7809667673716012
+			],
+			"placeName": "",
+			"desc": "",
+			"question": {
+				"question": "Bij welk van de volgende projecten zou de watertoets toegepast worden?",
+				"answer": [
+					{
+						"option": "Bouw van een gebouw aan een rivier",
+						"rightAnswer": true
+					},
+					{
+						"option": "Aanleg van een nevengeul",
+						"rightAnswer": false
+					},
+					{
+						"option": "Aanleg van een park met een grote vijver er in",
+						"rightAnswer": false
+					}
+				]
+			}
+		},
+		{
+			"coords": [
+				-1.04833836858006,
+				-2.297583081570997
+			],
+			"placeName": "",
+			"desc": "",
+			"question": {
+				"question": "Is het kanaliseren van de Maas in België positief of negatief voor Nederland?",
+				"answer": [
+					{
+						"option": "Negatief",
+						"rightAnswer": true
+					},
+					{
+						"option": "Positief",
+						"rightAnswer": false
+					}
+				]
+			}
+		},
+		{
+			"coords": [
+				-1.311178247734139,
+				-2.814199395770393
+			],
+			"placeName": "Door de verhoging van het grondwaterpeil verhoog je de kans op het inklinken van de grond",
+			"desc": "",
+			"question": {
+				"question": "",
+				"answer": [
+					{
+						"option": "Niet waar",
+						"rightAnswer": true
+					},
+					{
+						"option": "Waar",
+						"rightAnswer": false
+					}
+				]
+			}
+		},
+		{
+			"coords": [
+				-1.8549848942598182,
+				-2.9410876132930515
+			],
+			"placeName": "",
+			"desc": "",
+			"question": {
+				"question": "Hoe A het verval, hoe B de deeltjes in het sediment.",
+				"answer": [
+					{
+						"option": "A = kleiner, B = kleiner",
+						"rightAnswer": true
+					},
+					{
+						"option": "A = groter, B = kleiner",
+						"rightAnswer": false
+					},
+					{
+						"option": "A = kleiner, B = groter",
+						"rightAnswer": false
+					}
+				]
+			}
+		},
+		{
+			"coords": [
+				-2.3625377643504537,
+				-2.79607250755287
+			],
+			"placeName": "",
+			"desc": "",
+			"question": {
+				"question": "In welke polder komt het meeste zoute kwel voor?",
+				"answer": [
+					{
+						"option": "Zeepolder",
+						"rightAnswer": true
+					},
+					{
+						"option": "Droogmakerij",
+						"rightAnswer": false
+					},
+					{
+						"option": "veenpolder",
+						"rightAnswer": false
+					}
+				]
+			}
 		}
 	]
-}
-
-
-
-		{
-	"coords": [
-		1,
-		1
-	],
-	"placeName": "",
-	"desc": "",
-	"question": {
-		"question": "",
-		"answer": [
-			{
-				"option": "",
-				"rightAnswer": true
-			},
-			{
-				"option": "",
-				"rightAnswer": false
-			}
-		]
-	}
-},
-{
-	"option": "",
-	"rightAnswer": false
 }
