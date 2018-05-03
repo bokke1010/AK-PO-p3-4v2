@@ -2,30 +2,30 @@
 	"places": [
 		{
 			"coords": [1,1],
-			"placeName": "riverside place",
-			"desc": "This place has a perfect place next to a river",
+			"placeName": "hue",
+			"desc": "primary",
 			"question":
 			{
-				"question":"is this place rich",
+				"question":"tester",
 				"answer": [
 					{
-						"option":"very rich",
+						"option":"correct",
 						"rightAnswer":true
 					},
 					{
-						"option":"quite rich",
+						"option":"incorrect",
 						"rightAnswer":false
 					},
 					{
-						"option":"decent income",
+						"option":"what?",
 						"rightAnswer":false
 					},
 					{
-						"option":"quite poor",
+						"option":"4",
 						"rightAnswer":false
 					},
 					{
-						"option":"very poor",
+						"option":"5",
 						"rightAnswer":false
 					}
 				]
